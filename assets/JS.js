@@ -2,13 +2,13 @@ $(function () {
     var $day =$("div.dateChoose ul");
 
 //日期、星期
-    for(var i=0;i<7;i++){
-        var today = new Date(new Date().setDate(new Date().getDate() + i)).format("MM/dd");
+    for(var i=7;i>0;i--){
+        var today = new Date(new Date().setDate(new Date().getDate() +7- i)).format("MM/dd");
         var week;
         if(i>new Date().getDay()){
-            week = "星期" + "日一二三四五六".charAt(new Date().getDay()+i-7);
+            week = "星期" + "日一二三四五六".charAt(new Date().getDay()-i+7);
         } else {
-            week = "星期" + "日一二三四五六".charAt(new Date().getDay()+i);
+            week = "星期" + "日一二三四五六".charAt(new Date().getDay()-i);
         }
         // console.log(today)
         console.log(week)
